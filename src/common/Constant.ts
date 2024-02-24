@@ -1,5 +1,7 @@
 export const enum SCREEN {
   SPLASH = 'SPLASH',
+  TAB = 'TAB',
+  DETAIL = 'DETAIL',
   HOME = 'HOME',
   SEARCH = 'SEARCH',
   BOOKMARK = 'BOOKMARK',
@@ -13,6 +15,8 @@ export const TEXT = {
 
 export const IMAGE = {
   backgroundSplashScreen: require('../images/splashscreen.jpg'),
+  avatar: require('../images/testimonial_img1.png'),
+  recipeBookmark: require('../images/fry-sushi.png'),
 };
 
 export const ICON = {
@@ -20,6 +24,8 @@ export const ICON = {
   search: require('../images/search-icon.png'),
   bookmark: require('../images/bookmark-icon.png'),
   setting: require('../images/setting-icon.png'),
+  back: require('../images/icon-back.png'),
+  forward: require('../images/square-arrow.png'),
 };
 
 export const COLOR = {
@@ -27,7 +33,10 @@ export const COLOR = {
   transparent: 'transparent',
   white: '#FFFFFF',
   gray: '#CCC',
+  darkGray: '#5e5e62',
+  lightGray: '#eaebee',
   primary: '#11b88f',
+  lightPrimary: '#e8faef',
 };
 
 export const SIZE = {

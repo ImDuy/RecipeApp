@@ -6,12 +6,13 @@ import {style} from './Style';
 import {OutlineButton, PrimaryButton} from '../../components/CustomBtn';
 import {useNavigation} from '@react-navigation/native';
 import {PropsPush} from '../../navigation/TypeCheck';
+import {commonStyle} from '../../common/CommonStyle';
 
 export default function Splash() {
   const navigation = useNavigation<PropsPush>();
 
-  const onBtnPress = () => {
-    navigation.push(SCREEN.HOME);
+  const onLoginBtnPress = () => {
+    navigation.push(SCREEN.TAB);
   };
   return (
     <View style={style.container}>
@@ -26,9 +27,9 @@ export default function Splash() {
             easily
           </Text>
           <PrimaryButton
-            style={style.mtLarge}
+            style={commonStyle.mtLarge}
             title={TEXT.LOGIN}
-            onBtnPress={onBtnPress}
+            onBtnPress={onLoginBtnPress}
           />
           <OutlineButton style={style.mtSmall} title={TEXT.SIGNUP} />
         </View>

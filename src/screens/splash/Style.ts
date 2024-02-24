@@ -2,9 +2,6 @@ import {StyleSheet} from 'react-native';
 import {COLOR, FONT, SIZE} from '../../common/Constant';
 
 export const style = StyleSheet.create({
-  mtLarge: {
-    marginTop: SIZE.mgLarge,
-  },
   mtSmall: {
     marginTop: SIZE.mgSmall,
   },
