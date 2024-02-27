@@ -22,7 +22,7 @@ export const style = StyleSheet.create({
 
   //TabIcon
   tabIconContainer: {
-    height: '90%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },

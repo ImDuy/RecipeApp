@@ -4,7 +4,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 export type MainStackParams = {
   SPLASH: undefined;
   TAB: undefined;
-  DETAIL: {thumbnail?: string};
+  DETAIL: {id: string};
   HOME: undefined;
   SEARCH: undefined;
   BOOKMARK: undefined;

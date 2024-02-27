@@ -1,6 +1,6 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
-import FoodItem from '../../../components/HorizontalItem';
+import HorizontalItem from '../../../components/HorizontalItem';
 import {style} from '../Style';
 import {commonStyle} from '../../../common/CommonStyle';
 import {useGetTrendingMealsQuery} from '../../../api/FoodApi';
@@ -11,8 +11,8 @@ import {SCREEN} from '../../../common/Constant';
 export default function Trending() {
   const {data, isLoading} = useGetTrendingMealsQuery();
   const navigation = useNavigation<PropsPush>();
-  const onItemPress = () => {
-    navigation.push(SCREEN.DETAIL, {thumbnail: data?.meals[0].strMealThumb});
+  const onItemPress = (id?: string) => {
+    id ? navigation.push(SCREEN.DETAIL, {id: id}) : undefined;
   };
   return (
     <View style={commonStyle.mtSmall}>
@@ -21,7 +21,8 @@ export default function Trending() {
         horizontal
         data={data?.meals ?? []}
         renderItem={({item}) => (
-          <FoodItem
+          <HorizontalItem
+            id={item.idMeal}
             name={item.strMeal}
             thumbnail={item.strMealThumb}
             category={item.strCategory}
@@ -29,7 +30,7 @@ export default function Trending() {
             onItemPress={onItemPress}
           />
         )}
-        style={commonStyle.mtUltraSmall}
+        contentContainerStyle={commonStyle.mtUltraSmall}
         ItemSeparatorComponent={() => <View style={{width: 20}} />}
         showsHorizontalScrollIndicator={false}
       />

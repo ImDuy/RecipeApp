@@ -16,7 +16,16 @@ export const FoodApi = createApi({
         url: 'categories.php',
       }),
     }),
+    getMealDetail: builder.query<MealApiResponse, string>({
+      query: (id: string) => ({
+        url: `lookup.php?i=${id}`,
+      }),
+    }),
   }),
 });
 
-export const {useGetTrendingMealsQuery, useGetCategoriesQuery} = FoodApi;
+export const {
+  useGetTrendingMealsQuery,
+  useGetCategoriesQuery,
+  useGetMealDetailQuery,
+} = FoodApi;

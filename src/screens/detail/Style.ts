@@ -4,13 +4,19 @@ import {COLOR, FONT, SIZE} from '../../common/Constant';
 export const style = StyleSheet.create({
   //Header
   headerImg: {
-    height: 250,
+    height: '100%',
+    overflow: 'hidden',
+    aspectRatio: 3 / 2,
   },
-  headerContainer: {
+  headerSafeArea: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    padding: SIZE.pdMedium,
+  },
+  headerContainer: {
+    flex: 1,
+    paddingBottom: SIZE.pdSmall,
+    paddingHorizontal: SIZE.pdMedium,
     justifyContent: 'space-between',
   },
   toolbarContainer: {
@@ -18,34 +24,31 @@ export const style = StyleSheet.create({
     justifyContent: 'space-between',
   },
   iconBack: {
-    width: 36,
-    height: 36,
-    tintColor: COLOR.white,
+    width: 40,
+    height: 40,
+    tintColor: COLOR.primary,
   },
   iconBookmark: {
-    width: 36,
-    height: 36,
+    width: 40,
+    height: 40,
     tintColor: COLOR.primary,
   },
   headerContentContainer: {
     width: '95%',
-    padding: SIZE.pdSmall + 3,
-
+    padding: SIZE.pdSmall + 5,
     borderRadius: 8,
     alignSelf: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     gap: 20,
   },
   avatar: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
     borderRadius: 32,
   },
   headerTitleContainer: {
     flex: 1,
-    flexShrink: 1,
   },
   headerTitle: {
     fontWeight: '700',
@@ -61,5 +64,63 @@ export const style = StyleSheet.create({
     width: 26,
     height: 26,
     tintColor: COLOR.lightGray,
+  },
+
+  //Body
+  bodyContainer: {
+    padding: SIZE.pdMedium,
+  },
+  bodyTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bodyTitle: {
+    fontSize: FONT.sizeMedium,
+    fontWeight: '600',
+    flex: 1,
+    marginRight: 70,
+  },
+  bodySubTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 5,
+  },
+  pushToLeft: {
+    marginLeft: -20,
+  },
+  subTitle: {
+    fontSize: FONT.sizeSmall + 1,
+    color: COLOR.darkGray,
+  },
+  alignSelfEnd: {
+    alignSelf: 'flex-end',
+  },
+  textAlignRight: {
+    textAlign: 'right',
+  },
+  textAlignJustify: {
+    textAlign: 'justify',
+  },
+  bodyListTitle: {
+    fontSize: FONT.sizeSmall * 1.4,
+    fontWeight: '600',
+    marginTop: SIZE.mgMedium,
+  },
+  bodyItemContainer: {
+    flexDirection: 'row',
+    gap: 20,
+    alignItems: 'center',
+  },
+  bodyItemImgBg: {
+    padding: SIZE.pdSmall / 10,
+    backgroundColor: COLOR.lightGray,
+  },
+  bodyItemImg: {width: 50, height: 50, transform: [{translateX: -1}]},
+  bodyItemTitle: {
+    flex: 1,
+    fontSize: FONT.sizeSmall + 3,
+  },
+  bodyItemSubTitle: {
+    fontSize: FONT.sizeSmall + 3,
   },
 });

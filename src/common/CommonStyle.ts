@@ -9,6 +9,9 @@ export const commonStyle = StyleSheet.create({
   mtLarge: {
     marginTop: SIZE.mgLarge,
   },
+  mtMedium: {
+    marginTop: SIZE.mgMedium,
+  },
   mtSmall: {
     marginTop: SIZE.mgSmall,
   },

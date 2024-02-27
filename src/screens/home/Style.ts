@@ -5,7 +5,6 @@ export const style = StyleSheet.create({
   //Home
   homeContainer: {
     paddingHorizontal: SIZE.pdSmall,
-    marginBottom: 57,
   },
 
   //Header

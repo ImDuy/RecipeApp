@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 export const enum SCREEN {
   SPLASH = 'SPLASH',
   TAB = 'TAB',
@@ -40,6 +42,8 @@ export const COLOR = {
 };
 
 export const SIZE = {
+  screenWidth: Dimensions.get('window').width,
+  screenHeight: Dimensions.get('window').height,
   pdLarge: 32,
   pdMedium: 24,
   pdSmall: 16,
@@ -55,4 +59,8 @@ export const FONT = {
   weightLarge: '700',
   weightMedium: '500',
   weightSmall: '400',
+};
+
+export const STORAGE_KEY = {
+  bookmark: 'BOOKMARK',
 };

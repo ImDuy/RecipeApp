@@ -6,13 +6,14 @@ import Toolbar from './components/Toolbar';
 import {commonStyle} from '../../common/CommonStyle';
 import Trending from './components/Trending';
 import Category from './components/Category';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export default function Home() {
   return (
     <SafeAreaView style={commonStyle.screenContainer}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={style.homeContainer}>
+        style={[style.homeContainer, {marginBottom: 56}]}>
         <Header />
         <Toolbar />
         <Trending />

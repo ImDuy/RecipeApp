@@ -6,13 +6,15 @@ import {style} from './Style';
 import {commonStyle} from '../common/CommonStyle';
 
 type Props = {
+  id: string;
   name: string;
   thumbnail: string;
   category: string;
   area: string;
-  onItemPress?: () => void;
+  onItemPress?: (id?: string) => void;
 };
 export default function HorizontalItem({
+  id,
   name,
   thumbnail,
   category,
@@ -20,12 +22,10 @@ export default function HorizontalItem({
   onItemPress,
 }: Props) {
   return (
-    <TouchableOpacity style={style.horizontalItemShadow} onPress={onItemPress}>
-      <Image
-        style={style.itemImgContainer}
-        source={{uri: thumbnail}}
-        resizeMode="cover"
-      />
+    <TouchableOpacity
+      style={style.horizontalItemShadow}
+      onPress={() => (onItemPress ? onItemPress(id) : undefined)}>
+      <Image style={style.itemImgContainer} source={{uri: thumbnail}} />
       <View style={style.itemContentContainer}>
         <BlurView style={style.itemTypeContainer}>
           <Text style={[commonStyle.whiteText, commonStyle.boldText]}>
