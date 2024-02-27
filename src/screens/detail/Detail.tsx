@@ -18,7 +18,10 @@ export default function Detail() {
       showsVerticalScrollIndicator={false}
       style={commonStyle.screenContainer}>
       <Header
-        thumbnail={mealDetail?.strMealThumb ?? ''}
+        thumbnail={
+          mealDetail?.strMealThumb ??
+          'https://images.immediate.co.uk/production/volatile/sites/30/2023/06/Ultraprocessed-food-58d54c3.jpg?quality=90&resize=440,400'
+        }
         id={mealDetail?.idMeal ?? ''}
         title={mealDetail?.strMeal ?? ''}
       />

@@ -22,12 +22,15 @@ export default function Header({thumbnail, title, id}: BookmarkType) {
     storage
       .load({key: STORAGE_KEY.bookmark})
       .then((data: BookmarkType[]) => {
+        // data store the ref array of data on storage => do not mutate data
         console.log(data);
         const filterData = data.filter(item => item.id == id);
         if (filterData.length == 0) {
-          //only save on storage if item not exist in storage
-          data.push({thumbnail, title, id});
-          storage.save({key: STORAGE_KEY.bookmark, data: [...data]});
+          //only save on storage if item not exist in array
+          storage.save({
+            key: STORAGE_KEY.bookmark,
+            data: [...data, {thumbnail, title, id}],
+          });
           dispatch(getBookmarkData());
           Toast.show({
             type: 'success',
@@ -36,12 +39,16 @@ export default function Header({thumbnail, title, id}: BookmarkType) {
         }
       })
       .catch(err => {
-        console.log('no key found');
+        console.log('ERROR!!! ', err);
         storage.save({
           key: STORAGE_KEY.bookmark,
           data: [{thumbnail, title, id}],
         });
         dispatch(getBookmarkData());
+        Toast.show({
+          type: 'success',
+          text1: 'Bookmark success !',
+        });
       });
   };
 
